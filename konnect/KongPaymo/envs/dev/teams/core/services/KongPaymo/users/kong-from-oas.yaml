@@ -1,0 +1,63 @@
+_format_version: "3.0"
+services:
+- host: api.kongpaymo.com
+  id: baec7610-a1e6-5e75-8ac1-fa25159de8e8
+  name: user-accounts-api
+  path: /v1
+  plugins: []
+  port: 443
+  protocol: https
+  routes:
+  - id: 9f86d21e-15d6-5c47-9eec-d5fdc7b560a1
+    methods:
+    - GET
+    name: user-accounts-api_searchusers
+    paths:
+    - ~/users$
+    plugins: []
+    regex_priority: 200
+    strip_path: false
+    tags: []
+  - id: 493f4c1c-b3b8-5103-89d8-c27accd35267
+    methods:
+    - POST
+    name: user-accounts-api_createuser
+    paths:
+    - ~/users$
+    plugins: []
+    regex_priority: 200
+    strip_path: false
+    tags: []
+  - id: 4dceeb71-a5c8-5c2b-bb7f-f5d8796f241e
+    methods:
+    - DELETE
+    name: user-accounts-api_deleteuser
+    paths:
+    - ~/users/(?<userid>[^#?/]+)$
+    plugins: []
+    regex_priority: 100
+    strip_path: false
+    tags: []
+  - id: 8ccd2a80-db1c-54fd-a2de-816d89795e6e
+    methods:
+    - GET
+    name: user-accounts-api_getuser
+    paths:
+    - ~/users/(?<userid>[^#?/]+)$
+    plugins: []
+    regex_priority: 100
+    strip_path: false
+    tags: []
+  - id: bcab9755-f0bb-55c0-8446-23d3218b12a9
+    methods:
+    - PUT
+    name: user-accounts-api_updateuser
+    paths:
+    - ~/users/(?<userid>[^#?/]+)$
+    plugins: []
+    regex_priority: 100
+    strip_path: false
+    tags: []
+  tags:
+  - ko-api-name=users-dev
+upstreams: []
