@@ -1,0 +1,33 @@
+_format_version: "3.0"
+services:
+- host: api.kongpaymo.com
+  id: 1d1b1ce1-e280-51ba-b4f8-d22cbc952d86
+  name: user-data-api
+  path: /v1
+  plugins: []
+  port: 443
+  protocol: https
+  routes:
+  - id: 9067b5b1-5cec-5489-86e8-fa6772baf010
+    methods:
+    - GET
+    name: user-data-api_getsimplereport
+    paths:
+    - ~/reports/simple$
+    plugins: []
+    regex_priority: 200
+    strip_path: false
+    tags: []
+  - id: ed279ba9-937a-5189-9bfd-69ff91ff4d35
+    methods:
+    - GET
+    name: user-data-api_getusertransactions
+    paths:
+    - ~/reports/transactions$
+    plugins: []
+    regex_priority: 200
+    strip_path: false
+    tags: []
+  tags:
+  - ko-api-name=user-data-dev
+upstreams: []
