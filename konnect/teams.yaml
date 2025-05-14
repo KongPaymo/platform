@@ -1,1 +1,12 @@
 teams:
+  core:
+    description: core
+    services:
+      KongPaymo/users:
+        name: users
+        git:
+          remote: https://github.com/KongPaymo/users.git
+        description: KongPaymo user account system
+        spec-path: openapi.yaml
+        prod-branch-name: main
+        dev-branch-name: dev
